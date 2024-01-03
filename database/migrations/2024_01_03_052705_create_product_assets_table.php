@@ -13,7 +13,12 @@ return new class extends Migration
     {
         Schema::create('product_assets', function (Blueprint $table) {
             $table->id();
+            $table->foreignId("product_id");
+            $table->longText("image");
             $table->timestamps();
+            $table->foreign("product_id")
+                ->references("id")
+                ->on("products");
         });
     }
 
