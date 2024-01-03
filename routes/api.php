@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\CategoryController;
+use App\Http\Controllers\Api\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,4 +19,9 @@ use Illuminate\Support\Facades\Route;
 Route::controller(CategoryController::class)->group(function () {
     Route::get('/categories', 'categories');
     Route::get('/categories/sorted', 'categoriesSorted');
+});
+
+Route::controller(ProductController::class)->group(function () {
+    Route::get('/products', 'products');
+    Route::get('/products/sorted', 'productsSorted');
 });
