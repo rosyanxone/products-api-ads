@@ -6,14 +6,11 @@ use Exception;
 use App\Models\Product;
 use App\Models\ProductAsset;
 use Illuminate\Support\Str;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\ProductResource;
 use App\Http\Requests\ProductRequest;
-// use Illuminate\Validation\Validator;
-use Illuminate\Support\Facades\Validator;
-// use Illuminate\Contracts\Validation\Validator;
 
 class ProductController extends Controller
 {
