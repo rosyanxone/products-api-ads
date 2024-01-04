@@ -15,12 +15,8 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', function () {
-    return view('auth.login');
-});
-
 Auth::routes();
 
 Route::middleware('auth:sanctum')->controller(HomeController::class)->group(function () {
-    Route::get('/home', 'index')->name('home');
+    Route::get('/', 'index')->name('home');
 });
