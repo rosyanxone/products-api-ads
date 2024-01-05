@@ -42,7 +42,7 @@
                 <a href="{{ route('categories') }}" class="nav-link">Categories</a>
               </li>
               <li>
-                <a href="{{ route('categories') }}" class="nav-link">Products</a>
+                <a href="{{ route('products') }}" class="nav-link">Products</a>
               </li>
               <li>
                 <a href="{{ route('categories') }}" class="nav-link">Product Assets</a>

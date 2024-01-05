@@ -54,4 +54,15 @@ class HomeController extends Controller
 
         return view('pages.categories', compact('categories'));
     }
+
+    public function products()
+    {
+        $request = Request::create('/api/products/sorted', 'GET');
+        $response = Route::dispatch($request);
+
+        $body = json_decode($response->getContent(), true);
+        $products = $body['data'];
+
+        return view('pages.products', compact('products'));
+    }
 }
