@@ -4,7 +4,9 @@
 </p> 
 
 ## Introduction
-<p></p>
+<p>
+    Seleksi program MSIB 6 Posisi full-stack web developer di ADS Digital Partner. Evaluasi pengetahuan teknis, keterampilan pemrograman, dan kemampuan analitis. Aplikasi dibuat untuk memenuhi seleksi FSWD di ADS digital partner. Test case yang dipilih dan dikerjakan sesuai petunjuk adalah test case FSWD 2. Kriteria Aplikasi/API Endpoint: dapat menampilkan daftar Kategori, menampilkan daftar Produk dan CRUD, dapat menampilkan urutan sesuai kriteria, dapat menambah produk asset dan menghapus asset.
+</p>
 
 ## Table of Contents
 - [Installation](#installation)
