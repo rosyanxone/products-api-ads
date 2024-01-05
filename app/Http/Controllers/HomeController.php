@@ -65,4 +65,9 @@ class HomeController extends Controller
 
         return view('pages.products', compact('products'));
     }
+
+    public function productAssets()
+    {
+        return view('pages.product-assets');
+    }
 }

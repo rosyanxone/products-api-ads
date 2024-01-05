@@ -22,4 +22,5 @@ Route::middleware('auth:sanctum')->controller(HomeController::class)->group(func
     Route::get('/categories', 'categories')->name('categories');
     Route::get('/categories/{sorted}', 'sortedCategories')->name('categories.sorted');
     Route::get('/products', 'products')->name('products');
+    Route::get('/product-assets', 'productAssets')->name('product.assets');
 });
