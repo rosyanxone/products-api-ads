@@ -23,7 +23,7 @@
                   <tr>
                     <th scope="row">{{ ++$index }}</th>
                     <td>{{ $product['name'] }}</td>
-                    <td>{{ $product['category']['name'] }}</td>
+                    <td>{{ $product['category'] }}</td>
                     <td>
                       @foreach ($product['assets'] as $item)
                         @if($loop->index < 3)

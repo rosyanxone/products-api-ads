@@ -25,7 +25,7 @@ class ProductController extends Controller
         ]);
     }
 
-    public function productsSorted()
+    public function sortedProducts()
     {
         $products = Product::with('productAsset')->orderByDesc('price')->get();
 

@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>FSWD</title>
 
     <!-- Fonts -->
     <link href="//fonts.bunny.net" rel="dns-prefetch">
@@ -36,18 +36,22 @@
           </button>
 
           <div class="navbar-collapse collapse" id="navbarSupportedContent">
-            <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav d-flex ms-auto gap-4">
-              <li>
-                <a href="{{ route('categories') }}" class="nav-link">Categories</a>
-              </li>
-              <li>
-                <a href="{{ route('products') }}" class="nav-link">Products</a>
-              </li>
-              <li>
-                <a href="{{ route('product.assets') }}" class="nav-link">Product Assets</a>
-              </li>
-            </ul>
+            
+            @guest
+            @else
+              <!-- Left Side Of Navbar -->
+              <ul class="navbar-nav d-flex ms-auto gap-4">
+                <li>
+                  <a href="{{ route('categories') }}" class="nav-link">Categories</a>
+                </li>
+                <li>
+                  <a href="{{ route('products') }}" class="nav-link">Products</a>
+                </li>
+                <li>
+                  <a href="{{ route('product.assets') }}" class="nav-link">Product Assets</a>
+                </li>
+              </ul>
+            @endguest
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ms-auto">
