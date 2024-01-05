@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Route;
 
 class HomeController extends Controller
 {
@@ -24,5 +26,32 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+    public function categories()
+    {
+        $request = Request::create('/api/categories', 'GET');
+        $response = Route::dispatch($request);
+
+        $body = json_decode($response->getContent(), true);
+        $categories = $body['data'];
+
+        return view('pages.categories', compact('categories'));
+    }
+
+    public function sortedCategories($sorted)
+    {
+        $request = Request::create('/api/categories/descending', 'GET');
+
+        if($sorted == 'ascending') {
+            $request = Request::create('/api/categories/ascending', 'GET');
+        }
+
+        $response = Route::dispatch($request);
+        
+        $body = json_decode($response->getContent(), true);
+        $categories = $body['data'];
+
+        return view('pages.categories', compact('categories'));
     }
 }

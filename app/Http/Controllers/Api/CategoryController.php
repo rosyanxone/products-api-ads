@@ -19,7 +19,20 @@ class CategoryController extends Controller
         ]);
     }
 
-    public function categoriesSorted()
+    public function categoriesAscending()
+    {
+        $categories = Category::with('product')->get()->sortBy(function($q) {
+            return $q->product->count();
+        });
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Showing all Categories by product amount',
+            'data' => CategoryResource::collection($categories),
+        ]);
+    }
+
+    public function categoriesDescending()
     {
         $categories = Category::with('product')->get()->sortByDesc(function($q) {
             return $q->product->count();
@@ -27,7 +40,7 @@ class CategoryController extends Controller
 
         return response()->json([
             'status' => 'success',
-            'message' => 'Showing all Categories by product amount',
+            'message' => 'Showing all Categories by product amount Descending',
             'data' => CategoryResource::collection($categories),
         ]);
     }

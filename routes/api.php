@@ -25,7 +25,8 @@ Route::controller(AuthController::class)->group(function () {
 Route::middleware('auth:sanctum')->group(function () {
     Route::controller(CategoryController::class)->group(function () {
         Route::get('/categories', 'categories');
-        Route::get('/categories/sorted', 'categoriesSorted');
+        Route::get('/categories/ascending', 'categoriesAscending');
+        Route::get('/categories/descending', 'categoriesDescending');
     });
 
     Route::controller(ProductController::class)->group(function () {

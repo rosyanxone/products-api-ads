@@ -12,9 +12,15 @@ class Category extends Model
     
     protected $table = 'categories';
     protected $fillable = ['name'];
+    protected $appends = ['product_amount'];
     
     public function product(): HasMany
     {
         return $this->hasMany(Product::class);
+    }
+
+    public function getProductAmountAttribute()
+    {
+        return $this->product->count();
     }
 }
